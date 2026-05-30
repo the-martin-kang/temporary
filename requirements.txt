@@ -1,0 +1,59 @@
+# ML in Bioinformatics HW3 / KIBA DTA v6 circular16 selected-layer branch
+# Target: Linux A100 server, fresh conda env, Python 3.10, pip install.
+# Conservative default: CUDA 12.1 PyTorch wheel. This usually works on more A100 servers
+# than CUDA 12.4 because it needs a less recent NVIDIA driver.
+#
+# Install with:
+#   conda create -n mlbio_hw3_a100 python=3.10 -y
+#   conda activate mlbio_hw3_a100
+#   python -m pip install --upgrade pip setuptools wheel
+#   python -m pip install -r requirements_a100_splice_v6_cu121_v2.txt
+#
+# Important: HW3 ESM2 uses the fair-esm package, whose import name is `esm`.
+# Do NOT replace this with the PyPI package named `esm`.
+
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# GPU PyTorch for CUDA 12.1. A100 is compatible with this wheel.
+torch==2.5.1+cu121
+
+# Core numerical / ML stack
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.13.1
+scikit-learn==1.5.2
+joblib==1.4.2
+threadpoolctl==3.5.0
+tqdm==4.66.6
+
+# HW3 dataset / cheminformatics
+pytdc==1.1.15
+rdkit==2024.9.6
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.25.1
+seaborn==0.13.2
+
+# Protein and molecular language model feature extraction
+fair-esm==2.0.0
+transformers==4.44.2
+tokenizers==0.19.1
+safetensors==0.4.5
+huggingface-hub==0.25.2
+accelerate==0.34.2
+biopython==1.84
+einops==0.8.0
+
+# Utilities often needed by TDC/HuggingFace/notebooks
+requests==2.32.3
+PyYAML==6.0.2
+packaging==24.1
+regex==2024.9.11
+filelock==3.16.1
+
+# Notebook / CLI execution convenience
+ipykernel==6.29.5
+ipywidgets==8.1.5
+jupyterlab==4.2.5
+nbformat==5.10.4
+nbconvert==7.16.4
+matplotlib==3.9.2
