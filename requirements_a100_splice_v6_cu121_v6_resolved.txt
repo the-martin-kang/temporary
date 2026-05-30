@@ -1,0 +1,57 @@
+# ML Bioinformatics HW3 / KIBA DTA / A100 CUDA 12.1
+# Python: 3.10 recommended
+# Install with:
+#   python -m pip install -r requirements_a100_splice_v6_cu121_v6_resolved.txt
+#
+# Important:
+# - Install fair-esm, then import name is `esm`.
+# - Do NOT install the PyPI package named `esm`.
+# - pytdc==1.1.15 requires accelerate==0.33.0 and rdkit>=2023.9.5,<2024.3.1.
+
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# PyTorch CUDA 12.1 wheels
+numpy==1.26.4
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+torchaudio==2.5.1+cu121
+
+# Core numerical / ML stack
+pandas==2.2.3
+scipy==1.13.1
+scikit-learn==1.5.2
+joblib==1.4.2
+threadpoolctl==3.5.0
+tqdm==4.66.6
+
+# TDC / chemistry stack
+pytdc==1.1.15
+accelerate==0.33.0
+rdkit==2023.9.6
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.25.1
+seaborn==0.13.2
+openpyxl==3.1.5
+
+# Pretrained representation packages used by the HW3 code
+fair-esm==2.0.0
+transformers==4.44.2
+tokenizers==0.19.1
+safetensors==0.4.5
+huggingface-hub==0.25.2
+biopython==1.84
+einops==0.8.0
+
+# Utility packages
+requests==2.32.3
+PyYAML==6.0.2
+packaging==24.1
+regex==2024.9.11
+filelock==3.16.1
+
+# Notebook / CLI execution helpers
+ipykernel==6.29.5
+ipywidgets==8.1.5
+nbformat==5.10.4
+nbconvert==7.16.4
+matplotlib==3.9.2
